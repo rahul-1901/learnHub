@@ -58,7 +58,7 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {courses.map((course) => (
-              <div key={course.id} className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+              <div key={course._id} className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
                 <img src={course.imageLink} alt={course.title} className="w-full h-48 courseImage" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
