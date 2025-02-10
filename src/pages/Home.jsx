@@ -108,6 +108,17 @@ const Home = () => {
                 </p>
               </Link>
             }
+            {!isAdmin &&
+              <Link
+                to="/admin/signin"
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105 border-2 border-dashed border-gray-300 dark:border-gray-700 flex flex-col items-center justify-center h-full min-h-[384px]"
+              >
+                <PlusCircle className="h-16 w-16 text-gray-500 mb-4" />
+                <h3 className="text-xl font-semibold text-gray-800">
+                  Create your own courses
+                </h3>
+              </Link>
+            }
           </div>
         </div>
       ) : (
@@ -122,7 +133,7 @@ const Home = () => {
               Loading...
             </h1>
             <p className="text-gray-600">
-              Please wait while we set things up for you
+              Please wait while we connect to server
             </p>
           </div>
 
