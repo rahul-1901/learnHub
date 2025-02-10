@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getCourses, purchaseCourse } from '../backendApi/api';
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { Star, Clock, Users, PlusCircle, ServerOff } from 'lucide-react';
+import { Star, Clock, Users, PlusCircle, Loader2 } from 'lucide-react';
 import Navbar from './Navbar';
 
 const Home = () => {
@@ -111,20 +111,24 @@ const Home = () => {
           </div>
         </div>
       ) : (
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="max-w-2xl w-full rounded-2xl p-8 md:p-12 text-center">
-            <div className="flex justify-center mb-6">
-              <div className="bg-red-50 p-4 rounded-full">
-                <ServerOff className="w-12 h-12 text-red-500" />
-              </div>
-            </div>
+        <div className="flex flex-col items-center justify-center min-h-screen">
+          <div className="relative">
+            <Loader2 className="w-16 h-16 text-blue-500 animate-spin" />
+            <div className="absolute inset-0 w-16 h-16 border-8 border-gray-200 rounded-full" />
+          </div>
 
-            <h1 className="text-2xl md:text-3xl text-gray-900 mb-4">
-              We're working to restore service
+          <div className="mt-8 text-center">
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">
+              Loading...
             </h1>
-            <h1 className="text-1xl md:text-2xl text-gray-900 mb-4">
-              Server Down Temporarily...
-            </h1>
+            <p className="text-gray-600">
+              Please wait while we set things up for you
+            </p>
+          </div>
+
+          <div className="mt-2 flex gap-2 items-center text-sm text-gray-500">
+            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+            <p>Connecting to server</p>
           </div>
         </div>
       )}
