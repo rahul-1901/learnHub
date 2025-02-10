@@ -33,7 +33,7 @@ const AdminSignup = () => {
                         <div className="flex justify-center">
                             <BookOpen className="h-12 w-12 text-indigo-600" />
                         </div>
-                        <h2 className="mt-6 text-3xl font-bold text-gray-900">Create your account</h2>
+                        <h2 className="mt-6 text-3xl font-bold text-gray-900">Create your admin account</h2>
                         <p className="mt-2 text-sm text-gray-600">
                             Already registered as Admin?{' '}
                             <Link to="/admin/signin" className="font-medium text-indigo-600 hover:text-indigo-500">

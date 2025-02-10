@@ -27,6 +27,9 @@ const Courses = () => {
         try {
             const response = await purchaseCourse(courseId);
             toast.success(response.message, {position: "top-center", autoClose: 1000});
+            // course.customers++;
+            const updateCustomers = await getCoursebyId(id);
+            setCourse(updateCustomers.course);
         } catch (error) {
             if(localStorage.getItem("admin") === "true") {
                 toast.warn("Register as User!!", {position: "top-center", autoClose: 1000});
